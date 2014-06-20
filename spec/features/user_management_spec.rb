@@ -2,9 +2,9 @@ require 'spec_helper'
 
 feature "User signs up" do
 	
-	scenario "when being logged out" do
+	scenario "when user signs up" do
 		expect{ sign_up }.to change(User, :count).by 1
-		expect(User.first.email).to eq "test@test.com"
+		expect(User.first.email).to eq "dave@test.com"
 	end
 
 	def sign_up(username = 'dave',

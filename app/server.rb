@@ -24,6 +24,12 @@ get '/sign-up' do
 	erb :"sign-up"
 end
 
+post '/sign-up' do
+	User.create(username: params[:username],
+							email: params[:email])
+	redirect to '/'
+end
+
 get '/login' do
 	erb :login
 end
