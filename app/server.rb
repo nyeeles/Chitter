@@ -20,9 +20,9 @@ post '/' do
 end
 
 get '/sign-up' do
-	"Please enter your deets"
+	erb :"sign-up"
 end
 
 get '/login' do
-	"Please login"
+	erb :login
 end
