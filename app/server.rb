@@ -1,9 +1,10 @@
 require 'sinatra'
+require 'data_mapper'
 
-env = ["RACK_ENV"] || "development"
+env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
-require './models/peep'
+require_relative 'models/peep'
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
