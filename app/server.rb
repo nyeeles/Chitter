@@ -9,5 +9,6 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 get '/' do
-	"hello world"
+	@peeps = Peep.all
+	erb :index
 end
