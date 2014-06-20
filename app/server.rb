@@ -18,3 +18,7 @@ post '/' do
 	Peep.create(post: post)
 	redirect to '/'
 end
+
+get '/sign-up' do
+	"Please enter your deets"
+end
