@@ -22,3 +22,7 @@ end
 get '/sign-up' do
 	"Please enter your deets"
 end
+
+get '/login' do
+	"Please login"
+end
