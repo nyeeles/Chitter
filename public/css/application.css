@@ -9,3 +9,16 @@ a:link {
 a:hover {
 	text-decoration: underline;
 }
+
+footer {
+	margin-top: 100px;
+}
+
+ul {
+	padding: 0;
+}
+
+ul li {
+	margin: 20px 0px;
+	list-style-type: none;
+}
