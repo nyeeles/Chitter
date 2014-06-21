@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
+enable :sessions
+set :sessions_secret, 'super secret'
 
 env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
@@ -26,7 +28,8 @@ end
 
 post '/sign-up' do
 	User.create(username: params[:username],
-							email: params[:email])
+							email: params[:email],
+							password: params[:password])
 	redirect to '/'
 end
 
