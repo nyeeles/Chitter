@@ -1,15 +1,12 @@
 require 'sinatra'
 require 'data_mapper'
-enable :sessions
-set :sessions_secret, 'super secret'
-
-env = ENV["RACK_ENV"] || "development"
-DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
-
 require_relative 'models/peep'
 require_relative 'models/user'
-DataMapper.finalize
-DataMapper.auto_upgrade!
+require_relative 'data_mapper_setup'
+require_relative 'helpers/app_helpers'
+
+enable :sessions
+set :sessions_secret, 'super secret'
 
 get '/' do
 	@peeps = Peep.all
@@ -36,10 +33,4 @@ end
 
 get '/login' do
 	erb :login
-end
-
-helpers do
-	def current_user
-		@current_user ||=User.get(session[:user_id]) if session[:user_id]
-	end
 end
