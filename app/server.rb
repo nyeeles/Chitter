@@ -27,12 +27,19 @@ get '/sign-up' do
 end
 
 post '/sign-up' do
-	User.create(username: params[:username],
+	user = User.create(username: params[:username],
 							email: params[:email],
 							password: params[:password])
+	session[:user_id] = user.id
 	redirect to '/'
 end
 
 get '/login' do
 	erb :login
+end
+
+helpers do
+	def current_user
+		@current_user ||=User.get(session[:user_id]) if session[:user_id]
+	end
 end
