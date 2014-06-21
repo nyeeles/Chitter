@@ -9,6 +9,10 @@
 	<h1><a href="/">Chitter</a></h1>
 	<% if current_user %>
 		Hey <%= current_user.username.capitalize %>
+		<form method="post" action="/">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Logout">
+		</form>
 	<% end %>
   <%= yield %>
   <footer style="font-size:small;color:grey">&copy Nic Yeeles 2014</footer>

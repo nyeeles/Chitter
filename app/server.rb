@@ -19,6 +19,11 @@ post '/' do
 	redirect to '/'
 end
 
+delete '/' do
+	session[:user_id] = nil
+	redirect to '/'
+end
+
 get '/sign-up' do
 	erb :"sign-up"
 end
@@ -46,3 +51,4 @@ post '/login' do
 		erb :"/login"
 	end
 end
+
