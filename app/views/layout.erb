@@ -4,6 +4,7 @@
 	<title>Schitter</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
 	<link rel="stylesheet" type="text/css" href="css/application.css"> 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header>
@@ -17,6 +18,6 @@
 		Hey <%= current_user.username.capitalize %>
 		<% end %>
   <%= yield %>
-  <footer style="font-size:small;color:grey">&copy Nic Yeeles 2014</footer>
+  <footer><a href="http://www.nicyeeles.com" target="blank" >&copy Nic Yeeles 2014</a></footer>
 </body>
 </html>
