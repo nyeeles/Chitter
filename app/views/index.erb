@@ -7,15 +7,16 @@
 <% if current_user %>
 <article id="new-peep">
 	<form action="/" method="post">
-		<input type="text" name="post" style="width:500px;height:25px;color:grey" value="Compose new Peep..."
+		<input id="peep-box" type="text" name="post" value="Compose new Peep..."
 			onclick="if(this.value=='Compose new Peep...'){this.value=''}"
 			onblur="if(this.value==''){this.value='Compose new Peep...'}">
-		<input type="submit" value="Peep!">
+		<input id="peep-button" type="submit" value="Peep!">
 	</form>
 </article>
 <% end %>
 
-<ul>
+<ul id="wall">
+	<h2>Peeps</h2>
 	<% @peeps.reverse_each do |peep| %>
 		<li><%= peep.post %></li>
 	<% end %>
