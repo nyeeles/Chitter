@@ -8,7 +8,11 @@
 </head>
 <body>
 	<header>
-		<div id="logo"><a href="/">Schitter</a></div>
+		<div id="logo">
+			<a href="/">
+				<img src="images/schitter_logo.jpg" style="height:26px;">
+			</a>
+		</div>
 		<% if current_user %>
 			<form method="post" action="/">
 				<input type="hidden" name="_method" value="delete">
