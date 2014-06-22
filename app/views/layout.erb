@@ -4,7 +4,7 @@
 	<title>Schitter</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
 	<link rel="stylesheet" type="text/css" href="css/application.css"> 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
 	<header>
@@ -12,10 +12,13 @@
 		<% if current_user %>
 			<form method="post" action="/">
 				<input type="hidden" name="_method" value="delete">
-				<input id="logout-button" type="submit" value="Logout">
+				<input class="red-button" type="submit" value="Logout">
 			</form>
-	</header>
+		<% else %>
+			<a href="/sign-up" id="sign-up">Sign up</a>
+			<a href="/login">Login</a>
 		<% end %>
+	</header>
   <%= yield %>
   <footer><a href="http://www.nicyeeles.com" target="blank" >&copy Nic Yeeles 2014</a></footer>
 </body>

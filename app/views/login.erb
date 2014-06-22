@@ -1,11 +1,15 @@
 Have an account? Login
 <br><br>
-<form id="sign-up" action="/login" method="post">
-	<input type="text" name="email" value="Email" style="color:grey"
-		onclick="if(this.value=='Email'){this.value=''}"
-		onblur="if(this.value==''){this.value='Email'}"><br>
-	<input type="password" name="password" value="Password" style="color:grey"
-		onclick="if(this.value=='Password'){this.value=''}"
-		onblur="if(this.value==''){this.value='Password'}"><br><br>
-	<input type="submit" value="Login">
-</form>
+	<div class="container">
+		<h2 style="color:#141A1A;padding-left:0;">Sign in to Schitter</h2> 
+		<form id="sign-up" action="/login" method="post">
+			<input class="textbox" type="text" name="email" value="Email"
+				onclick="if(this.value=='Email'){this.value=''}"
+				onblur="if(this.value==''){this.value='Email'}"><br>
+			<input class="textbox" type="password" name="password" value="Password" 
+				onclick="if(this.value=='Password'){this.value=''}"
+				onblur="if(this.value==''){this.value='Password'}"><br><br><br>
+			<input class="blue-button" type="submit" value="Login">
+		</form>
+		<p style="font-size:small;color:grey;">New to Schitter? <a href="/sign-up">Sign up now >></a></p>
+	</div>
