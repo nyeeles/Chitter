@@ -7,9 +7,9 @@
 <% if current_user %>
 <article id="new-peep">
 	<form action="/" method="post">
-		<input id="peep-box" type="text" name="post" value="Hi <%= current_user.username.capitalize %>! Compose new Peep..."
-			onclick="if(this.value=='Hi <%= current_user.username.capitalize %>! Compose new Peep...'){this.value=''}"
-			onblur="if(this.value==''){this.value='Hi <%= current_user.username.capitalize %>! Compose new Peep...'}">
+		<input id="peep-box" type="text" name="post" value="Hi <%= current_user.name.split(' ').first %>! Compose new Peep..."
+			onclick="if(this.value=='Hi <%= current_user.name.split(' ').first %>! Compose new Peep...'){this.value=''}"
+			onblur="if(this.value==''){this.value='Hi <%= current_user.name.split(' ').first %>! Compose new Peep...'}">
 		<input class="button" type="submit" value="Peep">
 	</form>
 </article>
@@ -19,6 +19,7 @@
 	<h2>Peeps</h2>
 	<% @peeps.reverse_each do |peep| %>
 		<li>
+			<%= 
 			<h5 style="margin:0;padding-bottom:6px;"><%= peep.author %></h5>
 			<%= peep.post %>
 			<p style="font-size:10px;font-weight:bold;color:grey;"><%= peep.post_time %></p>
