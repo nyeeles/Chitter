@@ -1,5 +1,7 @@
-<a href="/sign-up">Sign up</a>
-<a href="/login">Login</a>
+<% if !current_user %>
+	<a href="/sign-up">Sign up</a>
+	<a href="/login">Login</a>
+<% end %>
 <br><br>
 
 <% if current_user %>
