@@ -15,7 +15,8 @@ end
 
 post '/' do
 	post = params["post"]
-	Peep.create(post: post)
+	post_time = Time.now.strftime("%H:%M, %d-%m-%y")
+	Peep.create(post: post, post_time: post_time)
 	redirect to '/'
 end
 

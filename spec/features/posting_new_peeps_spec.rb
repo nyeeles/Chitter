@@ -14,7 +14,7 @@ feature "User posts new Peeps" do
 	def post_peep(post)
 		within('#new-peep') do
 			fill_in 'post', with: post
-			click_button 'Peep!'
+			click_button 'Peep'
 		end
 	end
 end

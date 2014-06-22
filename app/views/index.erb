@@ -18,6 +18,6 @@
 <ul id="wall">
 	<h2>Peeps</h2>
 	<% @peeps.reverse_each do |peep| %>
-		<li><%= peep.post %></li>
+		<li><%= peep.post %><p style="font-size:10px;font-weight:bold;color:grey;"><%= peep.post_time %></p></li>
 	<% end %>
 </ul>

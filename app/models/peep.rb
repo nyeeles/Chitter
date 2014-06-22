@@ -4,6 +4,6 @@ class Peep
 
 	property :id, Serial
 	property :post, Text
-	property :author, String
+	property :post_time, String
 
 end
