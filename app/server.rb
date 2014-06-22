@@ -16,7 +16,7 @@ end
 post '/' do
 	post = params["post"]
 	post_time = Time.now.strftime("%H:%M, %d-%m-%y")
-	author = current_user.username.capitalize
+	author = current_user.name
 	Peep.create(post: post, post_time: post_time, author: author)
 	redirect to '/'
 end
@@ -31,9 +31,11 @@ get '/sign-up' do
 end
 
 post '/sign-up' do
-	user = User.create(username: params[:username],
-							email: params[:email],
-							password: params[:password])
+	user = User.create(
+										name: params[:name].split(' ').each(&:capitalize!).join(' '),
+										username: params[:username],
+										email: params[:email],
+										password: params[:password])
 	session[:user_id] = user.id
 	redirect to '/'
 end

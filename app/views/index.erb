@@ -7,9 +7,9 @@
 <% if current_user %>
 <article id="new-peep">
 	<form action="/" method="post">
-		<input id="peep-box" type="text" name="post" value="Hi <%= current_user.username.capitalize %>! Compose new Peep..."
-			onclick="if(this.value=='Hi <%= current_user.username.capitalize %>! Compose new Peep...'){this.value=''}"
-			onblur="if(this.value==''){this.value='Hi <%= current_user.username.capitalize %>! Compose new Peep...'}">
+		<input id="peep-box" type="text" name="post" value="Hi <%= current_user.name.split(' ').first %>! Compose new Peep..."
+			onclick="if(this.value=='Hi <%= current_user.name.split(' ').first %>! Compose new Peep...'){this.value=''}"
+			onblur="if(this.value==''){this.value='Hi <%= current_user.name.split(' ').first %>! Compose new Peep...'}">
 		<input class="button" type="submit" value="Peep">
 	</form>
 </article>

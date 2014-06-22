@@ -3,6 +3,9 @@ New to Chitter? Sign up
 <div class="container">
 	<h2 style="color:#141A1A;padding-left:0;">Join Schitter today.</h2>
 	<form id="sign-up" action="/sign-up" method="post">
+		<input class="textbox" type="text" name="name" value="Full name" style="color:grey"
+			onclick="if(this.value=='Full name'){this.value=''}"
+			onblur="if(this.value==''){this.value='Full name'}"><br>
 		<input class="textbox" type="text" name="username" value="Username" style="color:grey"
 			onclick="if(this.value=='Username'){this.value=''}"
 			onblur="if(this.value==''){this.value='Username'}"><br>
